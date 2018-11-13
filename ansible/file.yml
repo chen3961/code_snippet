@@ -1,0 +1,8 @@
+# common file operation in ansible scirpt
+
+# create a symbolic linke
+ - name: create symbolic link
+   file:
+     src: /etc/myapp/conf/myappv5.conf
+     dest: /etc/myapp.conf
+     state: link
