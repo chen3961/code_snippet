@@ -6,3 +6,13 @@ kubectl -n ${namespace} delete daemonsets,replicasets,services,deployments,pods,
 
 # remove all images 
 docker rmi -f $(docker images -a -q)
+
+# check veth for the pod - mainly for dump network packet for pod
+# in pod
+cat /sys/class/net/eth0/iflink
+# it will get a number such as “23”
+# in host
+ip link | grep ^{number}
+# get the veth id
+
+
